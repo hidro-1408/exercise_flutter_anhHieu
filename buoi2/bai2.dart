@@ -9,7 +9,7 @@ void main(List<String> args) {
 void solveEquation(int a, int b, int c) {
   if (a == 0 && b == 0 && c == 0) {
     print("phuong trinh co vo so nghiem");
-  } else if (a == 0) {
+  } else if (a == 0 && b == 0) {
     print("phuong trinh co 1 nghiem x = ${-c / b}");
   } else {
     int delta = b * b - 4 * a * c;

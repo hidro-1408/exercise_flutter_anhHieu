@@ -9,28 +9,30 @@ cách tính lũy kế sau:
 */
 
 void main(List<String> args) {
-  int kwh = 350; // Số kWh tiêu thụ
-  double bill = electricBill(kwh);
-  bill = double.parse(
-    bill.toStringAsFixed(2),
-  ); // Làm tròn đến 2 chữ số thập phân
-  print("Số tiền điện phải trả là: $bill đồng");
+  // ignore: unused_local_variable
+  List<Map<String, int>> tiers = [
+    {"limit": 50, "rate": 1678},
+    {"limit": 50, "rate": 1734},
+    {"limit": 100, "rate": 2014},
+    {"limit": 100, "rate": 2563},
+    {"limit": double.maxFinite.toInt(), "rate": 2834},
+  ];
+  final rs = electricBill(200, tiers);
+  print(rs);
 }
 
-double electricBill(int n) {
-  if (n < 50) {
-    return n * 1.678;
-  } else if (n < 100) {
-    return 50 * 1.678 + (n - 50) * 1.734;
-  } else if (n < 200) {
-    return 50 * 1.678 + 50 * 1.734 + (n - 100) * 2.014;
-  } else if (n < 300) {
-    return 50 * 1.678 + 50 * 1.734 + 100 * 2.014 + (n - 200) * 2.536;
-  } else {
-    return 50 * 1.678 +
-        50 * 1.734 +
-        100 * 2.014 +
-        100 * 2.536 +
-        (n - 300) * 2.834;
+int electricBill(int kwh, List<Map<String, int>> tiers) {
+  int bill = 0;
+  int remaningKwh = kwh;
+  for (var tier in tiers) {
+    if (remaningKwh < 0) break;
+    final limit = tier["limit"] ?? 0;
+    final rate = tier["rate"] ?? 0;
+    final currentKwh = remaningKwh > limit ? limit : remaningKwh;
+    bill += currentKwh * rate;
+
+    remaningKwh -= currentKwh;
   }
+
+  return bill;
 }
