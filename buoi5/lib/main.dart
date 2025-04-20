@@ -329,7 +329,7 @@ class MyApp extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Prepare Wireframe for Main Flow",
+                                      "Prepare Screens",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: "Inter",
