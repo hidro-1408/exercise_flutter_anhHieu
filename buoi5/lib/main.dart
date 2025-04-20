@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 690),
+      designSize: const Size(430, 932),
       minTextAdapt: true,
       splitScreenMode: true,
       // Use builder only if you need to use library outside ScreenUtilInit context
@@ -169,7 +169,6 @@ class MyApp extends StatelessWidget {
                         Expanded(
                           child: Container(
                             padding: EdgeInsets.all(11.sp),
-                            width: 376.sp,
                             height: 80.sp,
                             decoration: BoxDecoration(
                               color: Color(0xff1F1F1F),
@@ -215,8 +214,8 @@ class MyApp extends StatelessWidget {
                                 ),
                                 Image.asset(
                                   "assets/images/checkbox.png",
-                                  width: 26,
-                                  height: 26,
+                                  width: 26.sp,
+                                  height: 26.sp,
                                 ),
                               ],
                             ),
@@ -241,7 +240,6 @@ class MyApp extends StatelessWidget {
                         Expanded(
                           child: Container(
                             padding: EdgeInsets.all(11.sp),
-                            width: 376.sp,
                             height: 80.sp,
                             decoration: BoxDecoration(
                               color: Color(0xff1F1F1F),
@@ -287,8 +285,8 @@ class MyApp extends StatelessWidget {
                                 ),
                                 Image.asset(
                                   "assets/images/checkbox.png",
-                                  width: 26,
-                                  height: 26,
+                                  width: 26.sp,
+                                  height: 26.sp,
                                 ),
                               ],
                             ),
@@ -313,7 +311,6 @@ class MyApp extends StatelessWidget {
                         Expanded(
                           child: Container(
                             padding: EdgeInsets.all(11.sp),
-                            width: 376.sp,
                             height: 80.sp,
                             decoration: BoxDecoration(
                               color: Color(0xff1F1F1F),
@@ -334,7 +331,7 @@ class MyApp extends StatelessWidget {
                                         color: Colors.white,
                                         fontFamily: "Inter",
                                         fontSize: 16.sp,
-                                        height: 1,
+                                        height: 1.sp,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -359,8 +356,8 @@ class MyApp extends StatelessWidget {
                                 ),
                                 Image.asset(
                                   "assets/images/checkBoxFalse.png",
-                                  width: 26,
-                                  height: 26,
+                                  width: 26.sp,
+                                  height: 26.sp,
                                 ),
                               ],
                             ),
